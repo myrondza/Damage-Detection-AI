@@ -1,0 +1,733 @@
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damage Detection AI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  <title>CodePen - Media Icons </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet"
+  href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/css/mdb.min.css">
+<link rel="stylesheet"
+  href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.2.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb-plugins-gathered.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+  integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+  crossorigin="anonymous"></script>  
+  
+  
+  
+<style>
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Ubuntu', sans-serif;
+            line-height: 180%;
+            color: #666;
+            text-align: center;
+        }
+
+        h1 {
+        width: 100%;
+        color: #fff;
+        font-family: "Bebas Neue";
+        font-size: 33px;
+        position: absolute;
+        text-align: center;
+        top: 10%;
+        margin-top: -65px;
+        margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .parallax1 {
+            background: url("https://raw.githubusercontent.com/myrondza/Data-Science-Machine-Learning-Deep-Learning-AI-Guide-Algorithms/master/bkg5.png");
+            min-height: 100%;
+        }
+
+        .parallax2 {
+            background-image: url("https://raw.githubusercontent.com/rj2403/Damage_Detection/main/mechanic_101.jpg");
+            min-height: 100%;
+        }
+
+        .parallax3 {
+            background-image: url(img/Power.png);
+            min-height: 40%;
+        }
+
+        .parallax4 {
+            background-image: url(img/Birdy.jpg);
+            min-height: 100%;
+        }
+
+        .parallax1,
+        .parallax2,
+        .parallax3,
+        .parallax4 {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /*Important*/
+        }
+
+        .head {
+            position: absolute;
+            color: #fff;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            word-spacing: 20px;
+            /*animation: drop 3.0s ease;*/
+            cursor: pointer;
+            float: left;
+            top: 2%;
+        }
+
+        .head-left {
+            float: left;
+            width: 50%;
+        }
+
+        .head-right {
+            width: 50%;
+            float: left;
+            text-align: center;
+        }
+
+        img#img1 {
+            width: 180px;
+            height: auto;
+            float: left;
+            margin-left: 80px;
+        }
+
+        .head:hover {
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .title-txt {
+            position: absolute;
+            width: 65%;
+            top: 48%;
+            text-align: center;
+        }
+
+        .button-container {
+            position: absolute;
+            width: 60%;
+            top: 69%;
+            /*animation: drop 3.0s ease;
+            /* Make things beautiful */
+        }
+
+        button.button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-family: Montserrat;
+        }
+
+        button.button:hover {
+            background-position: right center;
+        }
+
+        
+
+        button#nav-btn {
+            color: #fff;
+            background: #2000c3;
+            width: 24%;
+            margin: -7px;
+            border-radius: 50px;
+        }
+
+        section {
+            position: relative;
+            background-size: cover;
+            background: #000000;
+            color: #f2f2f2;
+            overflow: auto;
+            min-height: 100%;
+
+        }
+
+       
+
+        form {
+            text-align: center;
+            display: inline-block;
+        }
+
+
+
+        input[type="file"] {
+        display: none;
+        }
+
+        input[type="submit"] {
+            color: #fff;
+            background: #2000c3;
+            width: 24%;
+            width: 200px;
+            height: 50px;color: #fff;
+            border-radius: 10%/50%;
+            border-width: 0;
+            font-weight: bold;
+            
+        }
+
+        .submit {
+            position: absolute;
+            top: 134px;
+            text-align: left;
+            float: left;
+            left: 32%;
+        }
+
+        .upload {
+            position: absolute;
+            top: 466px;
+            text-align: left;
+            float: left;
+            left: 16%;
+            width: 500px;
+            height: 100px;
+        }
+
+
+        .custom-file-upload {
+            display: inline-block;
+            cursor: pointer;
+            color: white;
+            background: #2000c3;
+            position: absolute;
+            top: -333px;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            float: left;
+            left: -108px;
+            line-height: 500%;
+            border-radius: 50px;
+        }
+
+        
+
+
+        footer {
+            width: 100%;
+            background-color: #323232;
+            color: #f2f2f2;
+            height: 8vh;
+            text-align: center;
+            padding-top: 5vh;
+            padding-bottom: 1vh;
+        }
+
+
+
+        iframe {
+            position: absolute;
+            top: 8%;
+            left: 1%;
+        }
+
+        .dropdown {
+            position: absolute;
+            width: 46.5%;
+            text-align: center;
+            background-repeat: no-repeat;
+            border-radius: 50px;
+            top: -1%;
+            left: 15px;
+            color: white;
+            font-size: 25px;
+            text-decoration-color: white;
+        }
+
+        .md-form input{
+            color: white
+        }
+
+
+
+
+        @media (max-width:800px) {
+            .head {
+                font-size: 200%;
+            }
+
+        }
+
+
+        @keyframes drop {
+            0% {
+                opacity: 0;
+                transform: translateY(-80px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        table {
+        top: 40%;
+        width: 350px;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+        font-size: 18px;
+        line-height: 0px;
+        position: absolute;
+        left: 773px;
+        border-radius: 12px;
+        }
+
+
+        th,td {
+        padding: 15px;
+        background-color: #2000c3;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        }
+        th {
+        text-align: center;
+        font-size: 16px;
+        }
+        thead th {
+        background-color: #2000c3;
+        }
+        tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        }
+        tbody td {
+        position: relative;
+        }
+        tbody td:hover:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -9999px;
+        bottom: -9999px;
+        background-color: rgba(255, 255, 255, 0.2);
+        z-index: -1;
+        }
+        
+
+        @font-face {
+        font-family: 'Bebas Neue';
+        src: url('../fonts/bebasneue-webfont.woff') format('woff'),
+            url('../fonts/bebasneue-webfont.ttf') format('truetype'),
+            url('../fonts/bebasneue-webfont.webfontABYyK1dn') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        }
+        
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+        /*IMPORTANT*/
+
+
+
+
+
+
+
+
+
+.social-container {
+  width: 200px;
+  margin: 40px auto;
+  text-align: center;
+  float: right;
+
+}
+
+.social-icons {
+  padding-top: 40px;
+  list-style: none;
+  margin: 1em;
+}
+.social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1.2em;
+}
+.social-icons i {
+  color: #fff;
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  transition: all 265ms ease-out;
+}
+.social-icons a {
+  display: inline-block;
+}
+.social-icons a:before {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  content: " ";
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #2000c3, #002A8F);
+  transition: all 265ms ease-out;
+}
+.social-icons a:hover:before {
+  transform: scale(0);
+  transition: all 265ms ease-in;
+}
+.social-icons a:hover i {
+  transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  color: #00B5F5;
+  background: -webkit-linear-gradient(45deg, #2000c3, #002A8F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
+}
+
+
+.topright {
+  font-size: 18px;
+  float: right;
+}
+
+.dropdown {
+  width: 300;
+  opacity: 10;
+}
+
+
+.price {
+    font-size: 23px;
+    float: right;
+    padding: 125;
+    padding-top: 207px;
+    padding-left: 58%;
+    font-weight: bold;
+    /* left: 137px; */
+}
+
+.repair {
+    font-size: 23px;
+    float: left;
+    padding: 125;
+    padding-top: 2px;
+    padding-left: 2%;
+    font-weight: bold;
+    padding-bottom: 28px;
+}
+
+.info {
+}
+
+
+  :root {
+  --textColor1: #008cff;
+  --textColor2: #fff;
+  --textColor3: #737594;
+}
+
+
+
+
+@keyframes gradientRotate {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+
+
+@-webkit-keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+ 
+
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-d8236034cc3508e70b0763f2575a8bb5850f9aea541206ce56704c013047d712.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+
+</head>
+
+<body translate="no"> 
+    
+<div class="parallax1">
+   
+    <div class="head">
+        <div class="head-left">
+            <a href=#>
+                <img id="img1"
+                    src="" align="left">
+            </a>
+        </div>
+        <div class="head-right">
+            <button id="nav-btn" class="button">Home
+                <a href="#"></a>
+            </button>
+            <button id="nav-btn" class="button">Contact
+                <a href="#"></a>
+            </button>
+            <button id="nav-btn" class="button">Survey
+                <a href="#"></a>
+            </button>
+        </div>
+    </div>
+    
+   <div class="social-container">
+        <ul class="social-icons">
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li><br>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li><br>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li><br>
+            <li><a href="#"><i class="fa fa-codepen"></i></a></li><br>
+        </ul>
+    </div>
+    
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://cdpn.io/cp/internal/boomboom/pen.js?key=pen.js-65bbb772-ec39-d94f-facc-d5612b76ca53" crossorigin=""></script> 
+   
+
+</div>
+<section>
+    <h1><img src="https://raw.githubusercontent.com/myrondza/Data-Science-Machine-Learning-Deep-Learning-AI-Guide-Algorithms/master/AI.png" align="left"></h1>
+
+
+    <form method="post" action="/" enctype="multipart/form-data">
+        
+        <div class="upload">
+
+            <label class="custom-file-upload">Upload
+                <input type="file" name="files[]" multiple="true" autocomplete="off" required>
+            </label>
+
+        </div>
+        <div class="submit">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    {% if filenames %}
+      {% for filename in filenames %}
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb" id="something" style="top: 200px;">
+                {% if scroll %}
+                <script>
+                    document.getElementById('{{ scroll }}').scrollIntoView();
+                </script>
+                {% endif %}
+
+          <img class="img-responsive" src="{{ url_for('display_image', filename=filename) }}" width="450" height="300"
+            align="right">
+        </div>
+      {% endfor %}
+    {% endif %}
+      {% for table in tables %}
+    {{ table|safe }}
+    {% endfor %}
+    <div class="price">Total Cost : {{value_p}} (Damage / Repair)</div>
+    
+    <div class="info">
+    <div class="repair"> Service Description : </div>
+    <div class="repair"> {{value_r}} </div>
+    </div>
+</section>  
+
+<div class="parallax2">
+    <div>
+        <iframe id="showmap" src="" width="630" height="330" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+
+
+        <div class='dropdown'>
+
+            <!-- <select name="cmbitems" class="mdb-select md-form initialized" id="cmbitems searchable=" Search here..">
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241278.7348518238!2d72.7293884588722!3d19.10852312774093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssuzuki%20service%20centre">
+                    Suzuki</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241274.7328895196!2d72.75810130905737!3d19.11126602130012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shyundai%20service%20cent">
+                    Hyundai</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241278.88941750818!2d72.72938782867429!3d19.10841718280426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1skia%20service%20centre%">
+                    kia</option>
+            </select> -->
+
+            <select name="cmbitems" class="mdb-select md-form initialized" id="cmbitems">
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241278.7348518238!2d72.7293884588722!3d19.10852312774093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssuzuki%20service%20centre%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382064356!5m2!1sen!2sin">
+                    Suzuki</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241274.7328895196!2d72.75510395905735!3d19.111266021300118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shyundai%20service%20centres%20in%20Mumbai!5e0!3m2!1sen!2sin!4v1627474609024!5m2!1sen!2sin">
+                    Hyundai</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241278.88941750818!2d72.72938782867429!3d19.10841718280426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1skia%20service%20centre%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382194193!5m2!1sen!2sin">
+                    kia</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241279.04398164162!2d72.72938719847598!3d19.10831123836519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMG%20service%20centre%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382231300!5m2!1sen!2sin">
+                    MG</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241279.1985442242!2d72.72938656827725!3d19.10820529442369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRenault%20service%20centre%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382274635!5m2!1sen!2sin">
+                    Renault</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241279.35310525593!2d72.72938593807812!3d19.108099350979764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMahindra%20service%20centre%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382323123!5m2!1sen!2sin">
+                    Mahindra</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241279.5076647368!2d72.7293853078786!3d19.107993408033423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stoyota%20service%20centre%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382356492!5m2!1sen!2sin">
+                    Toyota</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15090.122305452012!2d72.81145132570495!3d18.996327968404458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stata%20motors%20service%20centres%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382423634!5m2!1sen!2sin">
+                    Tata</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241442.03364949088!2d72.68011906405896!3d18.996275053649295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sford%20service%20centres%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382454355!5m2!1sen!2sin">
+                    Ford</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241442.18657489365!2d72.6801184334344!3d18.99616963670527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shonda%20service%20centres%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382485146!5m2!1sen!2sin">
+                    Honda</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d60327.543972698215!2d72.92306347466238!3d19.086960642769338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1snissan%20service%20centres%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382510003!5m2!1sen!2sin">
+                    Nissan</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d60327.546382580585!2d72.92306343527943!3d19.086954028316505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1schevrolet%20service%20centres%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382540283!5m2!1sen!2sin">
+                    Chevrolet</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.725301497094!2d72.8283909146997!3d19.20719678701275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6c87f63e1f9%3A0xe8bdba8fa2903192!2sR%20S%20Motors%20India%20(%20Service%20)!5e0!3m2!1sen!2sin!4v1627382577745!5m2!1sen!2sin">
+                    Fiat</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30141.802566692444!2d72.81306996366929!3d19.207195942828086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1svolkswagen%20service%20centres%20in%20mumbai%20&#39;!5e0!3m2!1sen!2sin!4v1627382617148!5m2!1sen!2sin">
+                    Volkswagen</option>
+                <option
+                    value="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d60327.543972698215!2d72.92306347466238!3d19.086960642769338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1snissan%20service%20centres%20in%20mumbai!5e0!3m2!1sen!2sin!4v1627382510003!5m2!1sen!2sin">
+                    Datsun</option>
+            </select>
+
+            <input type="text" name="txtprice" id="txtprice" style="opacity:0">
+
+
+            <script>
+                var select = document.getElementById('cmbitems');
+                var input = document.getElementById('txtprice');
+                select.onchange = function () {
+                    input.value = select.value;
+                    document.getElementById("showmap").src = input.value;
+                }
+            </script>
+
+        </div>
+
+        <script type="text/javascript"
+            src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/jquery.min.js"></script>
+        <script type="text/javascript"
+            src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/popper.min.js"></script>
+        <script type="text/javascript"
+            src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript"
+            src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.2/js/mdb.min.js"></script>
+        <script type="text/javascript"
+            src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.2/compiled-addons.min.js"></script>
+        <script type="text/javascript"
+            src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"></script>
+        <script type="text/javascript">{// Material Select Initialization
+                $(document).ready(function () {
+                    $('.mdb-select').materialSelect();
+                });
+            }</script>
+    </div>
+</div>
